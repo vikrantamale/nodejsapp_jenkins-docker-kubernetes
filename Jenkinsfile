@@ -23,7 +23,7 @@ pipeline {
            }
       steps{
         script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
+          docker.withRegistry( 'https://registry.hub.docker.com/ramann123', registryCredential ) {
             dockerImage.push("latest")
           }
         }
