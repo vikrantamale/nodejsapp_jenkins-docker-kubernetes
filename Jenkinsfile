@@ -28,6 +28,7 @@ pipeline {
                registryCredential = 'dockerhublogin'
            }
       steps{
+        sh "docker rmi -f `docker images`"
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
             dockerImage.push("latest")
