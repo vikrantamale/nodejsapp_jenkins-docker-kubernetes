@@ -17,6 +17,7 @@ pipeline {
 
     stage('Build image') {
       steps{
+        sh "docker rmi -f `docker images`"
         script {
           dockerImage = docker.build dockerimagename
         }
@@ -28,7 +29,6 @@ pipeline {
                registryCredential = 'dockerhublogin'
            }
       steps{
-        sh "docker rmi -f `docker images`"
         script {
           docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
             dockerImage.push("latest")
