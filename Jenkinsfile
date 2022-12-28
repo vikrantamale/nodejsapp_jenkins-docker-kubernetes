@@ -1,13 +1,19 @@
 pipeline {
 
   environment {
-    dockerimagename = "myimage"
+    dockerimagename = "thetips4you/nodeapp"
     dockerImage = ""
   }
 
   agent any
 
   stages {
+
+    stage('Checkout Source') {
+      steps {
+        git 'https://github.com/shazforiot/nodeapp_test.git'
+      }
+    }
 
     stage('Build image') {
       steps{
@@ -23,7 +29,7 @@ pipeline {
            }
       steps{
         script {
-          docker.withRegistry( 'ramann123', registryCredential ) {
+          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
             dockerImage.push("latest")
           }
         }
