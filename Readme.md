@@ -15,11 +15,13 @@ sudo apt-get update
   
 ```  
 
-install docker on it
+install docker on it : (for ubuntu :)
+
+https://docs.docker.com/engine/install/ubuntu/
 
 --- manage plugins > install docker pipeline plugin
 
-install kubernetes-cd plugin downloaded already ...
+install kubernetes-cd plugin downloaded already in local system ...
 
 --- manage jenkins > manage credentials
 
