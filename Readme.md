@@ -15,6 +15,8 @@ sudo apt-get update
   
 ```  
 
+-- make sure to give jenkins service root previleges
+
 install docker on it : (for ubuntu :)
 
 https://docs.docker.com/engine/install/ubuntu/
