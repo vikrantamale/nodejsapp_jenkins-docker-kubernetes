@@ -36,3 +36,7 @@ copy whole comgigfile from /root/.kube direvtory in creds
 run the pipeline
 
 --- surf workernodepublicIP:nodeport
+
+Note : This pipeline doesn't recreate the deployment if u have changed somethinh for the second build . make sure to delete deployment and than rebuild the pipeline.
+
+Thanks :)
