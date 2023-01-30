@@ -35,17 +35,4 @@ copy whole comgigfile from /root/.kube direvtory in creds
 
 run the pipeline
 
-
-
-*** IF Kubernetes stage is not working cz of kubernetes-cd plugin depreciated
-
-
-** if jenkins would hve beeen installed on master of kube cluster
-
-than , add aditional shell command instead of deploy stage of pipeline
-
-
-sudo kubectl deploymentservice.yaml
-
-** deployed **
-
+--- surf workernodepublicIP:nodeport
