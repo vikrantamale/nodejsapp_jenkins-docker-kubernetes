@@ -29,6 +29,7 @@ add dockerhub login creds with id same as provided as jenkinsfile
 
 --- add kubernetes credentials as well
 copy whole comgigfile from /root/.kube direvtory in creds
+-- id : kubernetes (as mentioned in jenkinsfile)
 
 run the pipeline
 
