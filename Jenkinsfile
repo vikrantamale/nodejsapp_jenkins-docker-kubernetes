@@ -43,7 +43,7 @@ pipeline {
       steps {
         script {
           withKubeConfig([credentialsId: 'kubernetes', serverUrl: 'https://172.31.82.88:6443']) {
-            sh 'kubectl apply -f my-kubernetes-directory'
+            sh 'kubectl apply -f deploymentservice.yml'
           }
         }
       }
