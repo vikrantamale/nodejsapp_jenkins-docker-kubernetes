@@ -23,11 +23,43 @@ https://docs.docker.com/engine/install/ubuntu/
 
 --- manage plugins > install docker pipeline plugin
 
-install kubernetes-cd plugin downloaded already in local system ...
-
 --- manage jenkins > manage credentials
 
 add dockerhub login creds with id same as provided as jenkinsfile
+
+
+kubernetes plugin and kubenetes cli plugin
+
+set up cloud > kubernetes
+
+add config.kubeconfig file 
+
+install kubectl on jenkins server
+
+ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+chmod a+x ./kubectl
+
+cp ./kubectl /usr/local/bin
+
+ln -s /usr/local/bin/kubectl /usr/bin
+
+
+-- build pipeline
+
+--- surf workernodepublicIP:nodeport
+
+
+Thanks :)
+
+
+
+
+
+==============================================================================
+
+/*
+install kubernetes-cd plugin downloaded already in local system ...
 
 --- add kubernetes credentials as well
 copy whole comgigfile from /root/.kube direvtory in creds
@@ -35,8 +67,5 @@ copy whole comgigfile from /root/.kube direvtory in creds
 
 run the pipeline
 
---- surf workernodepublicIP:nodeport
-
-Note : This pipeline doesn't recreate the deployment if u have changed somethinh for the second build . make sure to delete deployment and than rebuild the pipeline.
-
-Thanks :)
+Note : This pipeline doesn't recreate the deployment if u have changed somethinh for the second build . make sure to delete deployment and than rebuild the pipeline
+*/
