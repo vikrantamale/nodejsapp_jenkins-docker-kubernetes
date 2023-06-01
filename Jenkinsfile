@@ -28,7 +28,7 @@ pipeline {
         }
       }
     }
-
+/*
     stage('Deploying App to Kubernetes') {
       steps {
         script {
@@ -38,5 +38,16 @@ pipeline {
     }
 
   }
-
+*/
+    stage('Deploying App to Kubernetes') {
+      steps {
+        script {
+          kubectl(
+            kubernetesContext: 'my-kubernetes-context',
+            configs: 'deploymentservice.yml',
+            kubeconfigId: 'kubernetes'
+          )
+        }
+      }
+    }
 }
