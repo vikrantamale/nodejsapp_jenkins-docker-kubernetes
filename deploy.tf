@@ -5,7 +5,7 @@ provider "kubernetes" {
 
 resource "kubernetes_deployment" "nginx" {
   metadata {
-    name = "scalable-nginx-example"
+    name = "vikrant-nginx-example"
     labels = {
       App = "ScalableNginxExample"
     }
@@ -51,7 +51,7 @@ resource "kubernetes_deployment" "nginx" {
 
 resource "kubernetes_service" "example" {
   metadata {
-    name = "terraform-example"
+    name = "vikrant-terraform-example"
   }
   spec {
     selector = {
