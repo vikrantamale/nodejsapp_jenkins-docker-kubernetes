@@ -1,3 +1,8 @@
+provider "kubernetes" {
+  config_path = "~/.kube/config"  # Update with your kubeconfig file path if necessary
+}
+
+
 resource "kubernetes_deployment" "nginx" {
   metadata {
     name = "scalable-nginx-example"
