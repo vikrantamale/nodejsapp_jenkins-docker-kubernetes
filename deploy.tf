@@ -48,3 +48,23 @@ resource "kubernetes_deployment" "nginx" {
     }
   }
 }
+
+resource "kubernetes_service" "example" {
+  metadata {
+    name = "terraform-example"
+  }
+  spec {
+    selector = {
+      App = "ScalableNginxExample"
+    }
+    session_affinity = "ClientIP"
+    port {
+      port        = 80
+      target_port = 80
+    }
+
+    type = "NodePort"
+  }
+}
+
+
